@@ -23,13 +23,13 @@ import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
   const slides = [
     {
-        img: "https://pbs.twimg.com/media/Ek3OMLAXUAAFilE?format=jpg&name=large",
+        img: "https://c.myholidays.com/blog/blog/content/images/2021/10/------------------------------------------------------------------.jpg",
     },
     {
-        img: "https://www.kau.edu.sa/Images/124/In_news/2-6-1444-inner.jpg",
+        img: "https://2.bp.blogspot.com/-y-WKfR_kygk/VEY0rkI_ROI/AAAAAAAAcQM/3NvYlAMftaE/s1600/IMG22.jpg",
     },
     {
-        img: "https://i0.wp.com/eduschool40.blog/wp-content/uploads/2021/07/%D8%A7%D9%94%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D8%A9-%D8%B7%D9%88%D9%8A%D9%82.png?fit=1348%2C660&ssl=1",
+        img: "https://2.bp.blogspot.com/-vAZTslW79tE/VEY0scqxEEI/AAAAAAAAcQY/avu9933zqKg/s1600/IMG24.jpg",
     },
    
   ];

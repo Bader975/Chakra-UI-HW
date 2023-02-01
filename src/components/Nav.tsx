@@ -32,7 +32,7 @@ import {
 import { BsFillCameraVideoFill } from "react-icons/bs";
 
 function Nav() {
-  const bg = useColorModeValue("white", "gray.800");
+  const bg = useColorModeValue("gray.400", "gray.800");
   const mobileNav = useDisclosure();
 
   return (
@@ -45,7 +45,7 @@ function Nav() {
         px={{ base: 2, sm: 4 }}
         py={4}
       >
-        <Flex alignItems="center" justifyContent="space-between" mx="auto">
+        <Flex alignItems="center" justifyContent="space-between" mx="auto" mb={5}>
           <HStack spacing={4} display="flex" alignItems="center">
             <Box display={{ base: "inline-flex", md: "none" }}>
               <IconButton
@@ -107,29 +107,29 @@ function Nav() {
               {/* <Logo /> */}
               <Avatar
               size="md"
-              name="Tuwaiq Academy"
-              src="https://pbs.twimg.com/profile_images/1595710799556780034/cYX8qbt3_400x400.jpg"
+              name="KSA"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/800px-Flag_of_Saudi_Arabia.svg.png"
             />
             </chakra.a>
-            <chakra.h1 fontSize="xl">Tuwaiq Academy</chakra.h1>
+            <chakra.h1 fontSize="30px" color="white">Saudi Arabia <i className="fa-sharp fa-solid fa-heart"></i></chakra.h1>
           </HStack>
-          <HStack spacing={3} display="flex" alignItems="center">
+          <HStack spacing={8} display="flex" alignItems="center">
             <HStack spacing={3} display={{ base: "none", md: "inline-flex" }}>
-              <Button variant="ghost" leftIcon={<AiFillHome />} size="sm">
+              <Button variant="ghost" leftIcon={<AiFillHome />} size="m">
                 Dashboard
               </Button>
               <Button
                 variant="solid"
                 colorScheme="brand"
                 leftIcon={<AiOutlineInbox />}
-                size="sm"
+                size="md"
               >
                 Inbox
               </Button>
               <Button
                 variant="ghost"
                 leftIcon={<BsFillCameraVideoFill />}
-                size="sm"
+                size="m"
               >
                 Videos
               </Button>
@@ -153,29 +153,26 @@ function Nav() {
         alignItems="center"
         justifyContent="space-between"
         mx={2}
+        mb={25}
         borderWidth={0}
         overflowX="auto"
       >
         <Tabs defaultIndex={1} borderBottomColor="transparent">
           <TabList>
             <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
-              Basic
+              Home
             </Tab>
             <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
-              Integrations
+             Show Me The Places
             </Tab>
             <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
-              Notifications
+              Near Me
             </Tab>
             <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
-              Usage
+              About Us
             </Tab>
-            <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
-              Billing
-            </Tab>{" "}
-            <Tab isDisabled py={4} m={0}>
-              Advanced
-            </Tab>
+           
+           
           </TabList>
         </Tabs>
         <Spacer />

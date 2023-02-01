@@ -17,7 +17,7 @@ import {
   
  function Footer(){
     return (
-      <Box bg="white" _dark={{ bg: "gray.600" }}>
+      <Box bg="gray.400" mt={20} _dark={{ bg: "gray.600" }}>
         <Stack
           direction={{ base: "column", lg: "row" }}
           w="full"
@@ -26,7 +26,7 @@ import {
         >
           <Flex justify="center">
             <Image
-              src="https://tm.com.sa/wp-content/uploads/2022/12/akadymy-toyk-1671551933-181.jpg"
+              src="https://traveltalez.com/blog/wp-content/uploads/2020/04/%D8%A3%D9%86%D9%88%D8%A7%D8%B9-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D8%A9.jpg"
               alt="Company Logo"
               rounded="lg"
               width={{ base: "150px", lg: "200px" }}
