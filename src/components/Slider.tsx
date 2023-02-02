@@ -1,54 +1,48 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
- function slider(){
-  const arrowStyles = {
-    cursor: "pointer",
-    pos: "absolute",
-    top: "50%",
-    w: "auto",
-    mt: "-22px",
-    p: "16px",
-    color: "white",
-    fontWeight: "bold",
-    fontSize: "18px",
-    transition: "0.6s ease",
-    borderRadius: "0 3px 3px 0",
-    userSelect: "none",
-    _hover: {
-      opacity: 0.8,
-      bg: "black",
-    },
-  } as const;
-
+export default function Slider(){
   const slides = [
     {
-        img: "https://c.myholidays.com/blog/blog/content/images/2021/10/------------------------------------------------------------------.jpg",
+        img: "https://wallpaperaccess.com/full/622055.jpg",
     },
     {
-        img: "https://2.bp.blogspot.com/-y-WKfR_kygk/VEY0rkI_ROI/AAAAAAAAcQM/3NvYlAMftaE/s1600/IMG22.jpg",
+        img: " https://vmc.gea.gov.sa/sites/default/files/2023-01/03%20%2833%29.jpg",
     },
     {
-        img: "https://2.bp.blogspot.com/-vAZTslW79tE/VEY0scqxEEI/AAAAAAAAcQY/avu9933zqKg/s1600/IMG24.jpg",
+        img: "   https://vmc.gea.gov.sa/sites/default/files/2023-01/01%20%2833%29.jpg",
     },
+    // {
+    //     img: " ",
+    // },
    
   ];
-
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slidesCount = slides.length;
-
-  const prevSlide = () => {
-    setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
-  };
-  const nextSlide = () => {
-    setCurrentSlide((s) => (s === slidesCount - 1 ? 0 : s + 1));
-  };
 
   const carouselStyle = {
     transition: "all .5s",
     ml: `-${currentSlide * 100}%`,
   };
+
+  const SLIDES_INTERVAL_TIME = 3000;
+  const ANIMATION_DIRECTION = "right";
+
+  useEffect(() => {
+    const prevSlide = () => {
+      setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
+    };
+
+    const nextSlide = () => {
+      setCurrentSlide((s) => (s === slidesCount - 1 ? 0 : s + 1));
+    };
+
+    const automatedSlide = setInterval(() => {
+      ANIMATION_DIRECTION.toLowerCase() === "left" ? prevSlide() : nextSlide();
+    }, SLIDES_INTERVAL_TIME);
+    return () => clearInterval(automatedSlide);
+  }, [slidesCount]);
 
   return (
     <Flex
@@ -59,18 +53,19 @@ import { Box, Flex, Image, Text } from "@chakra-ui/react";
       alignItems="center"
       justifyContent="center"
     >
-      <Flex w="full" overflow="hidden" pos="relative">
-        <Flex h="450px" w="full" {...carouselStyle}>
+      <Flex w="full" overflow="hidden">
+        <Flex pos="relative" h="700" w="full" {...carouselStyle}>
           {slides.map((slide, sid) => (
-            <Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
+            <Box key={`slide-${sid}`} flex="none" boxSize="full" shadow="md">
               <Text
                 color="white"
                 fontSize="xs"
                 p="8px 12px"
                 pos="absolute"
                 top="0"
+                whiteSpace="nowrap"
               >
-                {sid + 1} / {slidesCount}
+               
               </Text>
               <Image
                 src={slide.img}
@@ -81,14 +76,7 @@ import { Box, Flex, Image, Text } from "@chakra-ui/react";
             </Box>
           ))}
         </Flex>
-        <Text {...arrowStyles} left="0" onClick={prevSlide}>
-          &#10094;
-        </Text>
-        <Text {...arrowStyles} right="0" onClick={nextSlide}>
-          &#10095;
-        </Text>
       </Flex>
     </Flex>
   );
 };
-export default slider;
