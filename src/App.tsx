@@ -1,5 +1,5 @@
 
-import { SimpleGrid, Box } from '@chakra-ui/react';
+import { SimpleGrid, Box, chakra, Flex, Link,Image, Grid, GridItem } from '@chakra-ui/react';
 import { useState } from 'react'
 import './App.css'
 
@@ -17,7 +17,14 @@ function App() {
       <Nav/>
     <Slider/>
     {/* Cards */}
- 
+    <Grid templateColumns='repeat(5, 1fr)' gap={6}>
+      
+  <GridItem w='100' h='10' bg='blue.500' />
+  <GridItem w='100' h='10' bg='blue.500' />
+  <GridItem w='100' h='10' bg='blue.500' />
+  <GridItem w='100' h='10' bg='blue.500' />
+  <GridItem w='100' h='10' bg='blue.500' />
+</Grid>
  
     <div className="card-container">
     <Card title={"Riyadh- BLVD WORLD"} image={"https://riyadhmarkets.com/wp-content/uploads/2022/10/1-2.jpg"} text={"The Boulevard World complex in Riyadh is one of the largest and most famous entertainment areas that will be opened in the Kingdom of Saudi Arabia, as this complex will include a wide variety of restaurants and cafes "}/>
@@ -31,6 +38,8 @@ function App() {
     <Card title={"Najran- AL ALkhdod"} image={"https://vid.alarabiya.net/images/2018/06/21/7204c064-6e02-47a1-9d52-f87ab96d600f/7204c064-6e02-47a1-9d52-f87ab96d600f.jpg?crop=4:3&width=1200"} text={" It is an annual international festival organized by the Saudi Falcon Club. This festival holds many world records and is mostly held in the cooler seasons of the year. The participants in this festival are the owners of trained falcons who compete in catching wild animals"}/>
     
     </div>
+ 
+
 
      <Footer/>
     
