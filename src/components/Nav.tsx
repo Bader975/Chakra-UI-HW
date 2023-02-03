@@ -1,4 +1,5 @@
 import React from "react";
+import { Link} from 'react-router-dom'
 
 import {
   chakra,
@@ -160,7 +161,7 @@ function Nav() {
         <Tabs defaultIndex={1} borderBottomColor="transparent">
           <TabList>
             <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
-              Home
+            <Link to='/'>Home</Link>
             </Tab>
             <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
              Show Me The Places
@@ -170,6 +171,8 @@ function Nav() {
             </Tab>
             <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
               About Us
+            </Tab><Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
+             <Link to='/about'>about</Link>
             </Tab>
            
            

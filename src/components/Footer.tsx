@@ -17,7 +17,7 @@ import {
   
  function Footer(){
     return (
-      <Box bg="gray.400" mt={20} _dark={{ bg: "gray.600" }}>
+      <Box bg="gray.400" mt={800} _dark={{ bg: "gray.600" }}>
         <Stack
           direction={{ base: "column", lg: "row" }}
           w="full"
