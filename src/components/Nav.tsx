@@ -21,6 +21,8 @@ import {
   TabList,
   Tab,
   Spacer,
+  useColorMode,
+  DarkMode,
 } from "@chakra-ui/react";
 // import { Logo } from "@choc-ui/logo";
 import {
@@ -31,9 +33,12 @@ import {
   AiFillBell,
 } from "react-icons/ai";
 import { BsFillCameraVideoFill } from "react-icons/bs";
+import { VscColorMode } from "react-icons/vsc"
 
 function Nav() {
   const bg = useColorModeValue("gray.400", "gray.800");
+  const { toggleColorMode } = useColorMode()
+  const color = useColorModeValue('white', 'gray.800')
   const mobileNav = useDisclosure();
 
   return (
@@ -146,9 +151,13 @@ function Nav() {
               <VisuallyHidden>Notifications</VisuallyHidden>
             </chakra.a>
 
-           
+            <Button size='md' onClick={toggleColorMode} >
+       { bg == "gray.400"?" Dark Mode ":"Light Mode "}<VscColorMode/>
+       
+      </Button>
           </HStack>
         </Flex>
+      
       </chakra.header>
       <Flex
         alignItems="center"
