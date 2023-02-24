@@ -36,7 +36,7 @@ import { BsFillCameraVideoFill } from "react-icons/bs";
 import { VscColorMode } from "react-icons/vsc"
 
 function Nav() {
-  const bg = useColorModeValue("gray.400", "gray.800");
+  const bg = useColorModeValue("gray.400", "gray.600");
   const { toggleColorMode } = useColorMode()
   const color = useColorModeValue('white', 'gray.800')
   const mobileNav = useDisclosure();
@@ -147,14 +147,13 @@ function Nav() {
               rounded="sm"
               _hover={{ color: "gray.800", _dark: { color: "gray.600" } }}
             >
-              <AiFillBell />
-              <VisuallyHidden>Notifications</VisuallyHidden>
-            </chakra.a>
-
-            <Button size='md' onClick={toggleColorMode} >
+              
+            <Button size='sm' onClick={toggleColorMode} >
        { bg == "gray.400"?" Dark Mode ":"Light Mode "}<VscColorMode/>
        
       </Button>
+            </chakra.a>
+
           </HStack>
         </Flex>
       
@@ -167,21 +166,18 @@ function Nav() {
         borderWidth={0}
         overflowX="auto"
       >
-        <Tabs defaultIndex={1} borderBottomColor="transparent">
+        <Tabs defaultIndex={0} borderBottomColor="transparent">
           <TabList>
             <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
             <Link to='/'>Home</Link>
             </Tab>
             <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
-             Show Me The Places
+             <Link to="/GPS" >Near Me</Link>
             </Tab>
             <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
-              Near Me
-            </Tab>
-            <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
-              About Us
+              <Link to='/call'>Call us</Link>
             </Tab><Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
-             <Link to='/about'>about</Link>
+             <Link to='/about'>About</Link>
             </Tab>
            
            

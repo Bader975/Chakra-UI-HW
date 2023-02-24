@@ -37,7 +37,7 @@ function Cards(props:CardProps) {
     </Stack>
   </CardBody>
   <CardFooter>
-  <Button colorScheme='red'>Show Me More</Button>
+  <Button colorScheme='green'  rounded='xl' mx="auto">Show Me More</Button>
   </CardFooter>
  
 </Card>

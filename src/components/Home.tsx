@@ -12,19 +12,22 @@ import Nav from './Nav';
 import Slider from './Slider';
 import Home from './Home';
 import { Box, SimpleGrid } from '@chakra-ui/react';
+import GPS from './GPS';
+import { Status, Wrapper } from '@googlemaps/react-wrapper';
+import Click from './Click';
 
 function home() {
   return (
     <div className="home">
-    <Nav/>
+<Nav/>
 
-
-
+{/* <Click/> */}
+    
   <Slider/>
   {/* Cards */}
 
 
-  <SimpleGrid minChildWidth='350px'spacingX='100px' spacingY='400px'  columns={{ base: 1, md: 2, lg: 3 }}
+  <SimpleGrid minChildWidth='350px'spacingX='10' spacingY='300px'  columns={{ base: 1, md: 2, lg: 2 }}
           spacing={20}
           px={{ base: 1, lg: 16, xl: 24 }}
           py={5}
